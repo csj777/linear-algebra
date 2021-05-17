@@ -6,6 +6,12 @@ Python实现
 为了简化，底层使用list
 
 ----
+项目结构：
+- LA包
+   - __init\__.py：包初始化
+   - Vector.py：包实现
+- main_vector.py：测试代码
+----
 ## 实现基本内建方法
 - **实现 __repr__输出：**
     

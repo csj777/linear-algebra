@@ -11,9 +11,11 @@ if __name__ == "__main__":
     print("{} + {} = {}".format(vec, vec2, vec + vec2))
     print("{} - {} = {}".format(vec, vec2, vec - vec2))
 
+    # vec_wrong = Vector([1, 2, 3])
+    # print("{} - {} = {}".format(vec, vec_wrong, vec - vec_wrong))
+
     print("{} * {} = {}".format(vec, 3, vec * 3))
     print("{} * {} = {}".format(3, vec, 3 * vec))
 
     print("+{} = {}".format(vec, +vec))
     print("-{} = {}".format(vec, -vec))
-
