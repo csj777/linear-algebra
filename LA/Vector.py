@@ -1,3 +1,7 @@
+import math
+from ._global import EPSILON
+
+
 class Vector:
     def __init__(self, lst):
         self._values = list(lst)
@@ -49,3 +53,22 @@ class Vector:
     def __neg__(self):
         '''向量取负'''
         return -1 * self
+
+    @classmethod
+    def zero(cls, dim):
+        '''返回dim维度零向量'''
+        return cls([0] * dim)
+
+    def norm(self):
+        '''返回向量的长度'''
+        return math.sqrt(sum(e * e for e in self))
+
+    def normalize(self):
+        '''返回向量的单位向量'''
+        if self.norm() < EPSILON:
+            raise ZeroDivisionError('Normalize error! norm is zero.')
+        return Vector(self._values) / self.norm()
+
+    def __truediv__(self, k):
+        '''向量数量除法'''
+        return (1 / k) * self
