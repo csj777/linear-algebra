@@ -1,5 +1,4 @@
 ## Vector for Linear Algebra
-
 实现线性代数中的向量（Vector）  
 数据结构练习及线性代数复习  
 Python实现  
@@ -8,9 +7,13 @@ Python实现
 ----
 ### 项目结构：
 - LA包
-   - __init\__.py：包初始化
+   - __init\__.py：包初始化  
    - Vector.py：包实现
 - main_vector.py：测试代码
+----
+## 目录
+- [实现基本内建方法](#实现基本内建方法)  
+- [实现向量基本运算](#实现向量基本运算)
 ----
 ### 实现基本内建方法
 - #### 实现 __repr__输出：
@@ -77,3 +80,11 @@ Python实现
 > print("{} / {} = {}".format(vec, 2, vec / 2))   
 > ```
 > (30, 40) / 2 = (15.0, 20.0)
+- #### 向量点乘
+> ```Python
+> print("{} · {} = {}".format(vec, vec2, vec.dot(vec2)))  
+> print("{} * {} = {}".format(vec, vec2, vec * vec2))  
+> ```
+> (3, 4) · (3, 7) = 37  
+> (3, 4) · (3, 7) = 37
+

@@ -40,7 +40,16 @@ class Vector:
 
     def __mul__(self, k):
         '''向量乘法'''
-        return Vector([k * e for e in self])
+        try:
+            if isinstance(k, int) is not True:
+                k = float(k)
+            return Vector([k * e for e in self])
+        except Exception:
+            if len(k) == 1:
+                return self * k[0]
+            assert len(self) == len(k), \
+                "Error in subtracting. Length of vectors must be same."
+            return self.dot(k)
 
     def __rmul__(self, k):
         '''向量乘法'''
@@ -66,9 +75,18 @@ class Vector:
     def normalize(self):
         '''返回向量的单位向量'''
         if self.norm() < EPSILON:
-            raise ZeroDivisionError('Normalize error! norm is zero.')
+            return self.zero(len(self))
+            # raise ZeroDivisionError('Normalize error! norm is zero.')
         return Vector(self._values) / self.norm()
 
     def __truediv__(self, k):
         '''向量数量除法'''
         return (1 / k) * self
+
+    def dot(self, another):
+        '''向量点乘'''
+        if(len(another) == 1):
+            return self * another[0]
+        assert len(self) == len(another), \
+            "Error in dot product. Length of vectors must be same."
+        return sum(a * b for a, b in zip(self, another))

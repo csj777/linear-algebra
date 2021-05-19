@@ -2,7 +2,7 @@ from LA.Vector import Vector
 
 if __name__ == "__main__":
 
-    vec = Vector([30, 40])
+    vec = Vector([3, 4])
     print(vec)
     print(len(vec))
     print("vec[0] = {}, vec[1] = {}".format(vec[0], vec[1]))
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     # vec_wrong = Vector([1, 2, 3])
     # print("{} - {} = {}".format(vec, vec_wrong, vec - vec_wrong))
 
-    print("{} * {} = {}".format(vec, 2, vec * 2))
+    print("{} * {} = {}".format(vec, 2.5, vec * [2.5]))
     print("{} * {} = {}".format(2, vec, 2 * vec))
 
     print("+{} = {}".format(vec, +vec))
@@ -29,3 +29,8 @@ if __name__ == "__main__":
     print(vec.normalize().norm())
 
     print("{} / {} = {}".format(vec, 2, vec / 2))
+    print(zero2.normalize())
+
+    print("{} · {} = {}".format(vec, vec2, vec.dot(vec2)))
+
+    print("{} * {} = {}".format(vec, vec2, vec * vec2))
