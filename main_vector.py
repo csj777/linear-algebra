@@ -14,7 +14,7 @@ if __name__ == "__main__":
     # vec_wrong = Vector([1, 2, 3])
     # print("{} - {} = {}".format(vec, vec_wrong, vec - vec_wrong))
 
-    print("{} * {} = {}".format(vec, 2.5, vec * [2.5]))
+    print("{} * {} = {}".format(vec, [2.5], vec * [2.5]))
     print("{} * {} = {}".format(2, vec, 2 * vec))
 
     print("+{} = {}".format(vec, +vec))

@@ -1,21 +1,34 @@
-## Vector for Linear Algebra
-实现线性代数中的向量（Vector）  
+## Linear Algebra
+
+搭建个人线性代数库  
 数据结构练习及线性代数复习  
 Python实现  
 为了简化代码，底层使用list
 
 ----
-### 项目结构：
-- LA包
-   - __init\__.py：包初始化  
-   - Vector.py：包实现
-- main_vector.py：测试代码
-----
 ## 目录
-- [实现基本内建方法](#实现基本内建方法)  
-- [实现向量基本运算](#实现向量基本运算)
+<!-- TOC -->
+
+- [Linear Algebra](#linear-algebra)
+- [目录](#目录)
+- [项目结构](#项目结构)
+- [向量类实现](#向量类实现)
+  - [实现向量基本内建方法](#实现向量基本内建方法)
+  - [实现向量基本运算](#实现向量基本运算)
+- [矩阵类实现](#矩阵类实现)
+
+<!-- /TOC -->
 ----
-### 实现基本内建方法
+## 项目结构
+- LA
+  - __init\__.py
+  - _global.py
+  - Vector.py
+  - main_vector.py
+
+----
+## 向量类实现
+### 实现向量基本内建方法
 - #### 实现 __repr__输出：
     
     > \>>> vec   
@@ -84,7 +97,53 @@ Python实现
 > ```Python
 > print("{} · {} = {}".format(vec, vec2, vec.dot(vec2)))  
 > print("{} * {} = {}".format(vec, vec2, vec * vec2))  
+> print("{} * {} = {}".format(vec, [2.5], vec * [2.5]))
 > ```
 > (3, 4) · (3, 7) = 37  
-> (3, 4) · (3, 7) = 37
+> (3, 4) · (3, 7) = 37  
+> (3, 4) * [2.5] = (7.5, 10.0)
 
+----
+## 矩阵类实现
+- #### 初始化
+```Python
+matrix = Matrix([[1, 2], [3, 4]])
+```
+- #### 初始化
+```Python
+print(matrix)
+```
+- #### 矩阵形状
+```Python
+print(matrix.shape())
+```
+- #### 矩阵长度
+```Python
+print(matrix.shape())
+```
+- #### 选取矩阵行、列向量
+```Python
+print(matrix.row_vector(0))
+print(matrix.col_vector(0))
+```
+- #### 矩阵加法
+```Python
+print(print(matrix + matrix2))
+```
+- #### 矩阵减法
+```Python
+print(print(matrix - matrix2))
+```
+- #### 矩阵左右数量乘法
+```Python
+print(matrix * 2)
+print(2 * matrix)
+```
+- #### 矩阵数量除法
+```Python
+print(matrix / 2)
+```
+- #### 零矩阵
+```Python
+print(Matrix.zero(3, 7))
+```
