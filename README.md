@@ -149,3 +149,11 @@ print(matrix / 2)
 ```Python
 print(Matrix.zero(3, 7))
 ```
+- #### 矩阵乘法
+```Python
+T = Matrix([[1.5, 0], [0, 2]])
+p = Vector([5, 3])
+P = Matrix([[0, 4, 5], [0, 0, 3]])
+print(T.dot(p))
+print(T.dot(P))
+```

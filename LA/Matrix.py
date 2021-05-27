@@ -83,3 +83,22 @@ class Matrix:
     def zero(cls, r, c):
         '''返回r行c列零矩阵'''
         return cls([[0] * c for _ in range(c)])
+
+    def dot(self, another):
+        '''矩阵乘法'''
+        if isinstance(another, Vector):
+            # Matrix * Vector
+            assert self.col_num() == len(another), \
+                "Error in Matrix-Vector Multiplication."
+            return Vector([
+                self.row_vector(i).dot(another) for i in range(self.row_num())
+            ])
+
+        if isinstance(another, Matrix):
+            # Matrix * Matrix
+            assert self.col_num() == another.row_num(), \
+                "Error in Matrix-Matrix Multiplication."
+            return Matrix([[
+                self.row_vector(i).dot(another.col_vector(j))
+                for j in range(another.col_num())
+            ] for i in range(self.row_num())])
