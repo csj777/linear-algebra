@@ -24,9 +24,9 @@ Python实现
   - __init\__.py
   - _global.py
   - Vector.py
-  - main_vector.py
   - Matrix.py
-  - main_matrix.py
+- main_vector.py
+- main_matrix.py
 
 ----
 ## 向量类实现
