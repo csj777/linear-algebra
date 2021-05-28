@@ -107,3 +107,11 @@ class Matrix:
                 self.row_vector(i).dot(another.col_vector(j))
                 for j in range(another.col_num())
             ] for i in range(self.row_num())])
+
+    @classmethod
+    def identity(cls, n):
+        '''单位矩阵'''
+        m = [[0]*n for _ in range(n)]
+        for i in range(n):
+            m[i][i] = 1
+        return cls(m)

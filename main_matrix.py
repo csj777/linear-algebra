@@ -24,3 +24,5 @@ if __name__ == "__main__":
     print(T.dot(P))
 
     print(P.T())
+
+    print(Matrix.identity(2))
