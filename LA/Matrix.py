@@ -84,6 +84,11 @@ class Matrix:
         '''返回r行c列零矩阵'''
         return cls([[0] * c for _ in range(c)])
 
+    def T(self):
+        '''矩阵转置'''
+        return Matrix([[col for col in self.col_vector(i)]
+                       for i in range(self.col_num())])
+
     def dot(self, another):
         '''矩阵乘法'''
         if isinstance(another, Vector):
