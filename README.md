@@ -175,7 +175,7 @@ print(P.T())
 - #### 矩阵缩放
 - #### 矩阵剪切
 - #### 矩阵旋转
-- #### 零矩阵
+- #### 单位矩阵
 > ```Python
 > print(Matrix.identity(2))
 > ```
@@ -186,4 +186,8 @@ ls = LinearSystem(A, b)
 if not ls.gauss_jordan_elimination():
     print("No Solution!")
 ls.fancy_print()
+```
+- #### 矩阵逆
+```Python
+invA = inv(A)
 ```
