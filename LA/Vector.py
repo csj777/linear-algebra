@@ -90,3 +90,7 @@ class Vector:
         assert len(self) == len(another), \
             "Error in dot product. Length of vectors must be same."
         return sum(a * b for a, b in zip(self, another))
+
+    def underlying_list(self):
+        '''返回底层列表'''
+        return self._values[:]

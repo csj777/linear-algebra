@@ -3,7 +3,9 @@
 搭建个人线性代数库  
 数据结构练习及线性代数复习  
 Python实现  
-为了简化代码，底层使用list
+为了简化代码，底层使用list  
+
+liuyubobobo 课程
 
 ----
 ## 目录
@@ -18,6 +20,7 @@ Python实现
 - [矩阵类实现](#矩阵类实现)
   - [矩阵基本方法实现](#矩阵基本方法实现)
   - [矩阵应用](#矩阵应用)
+- [线性系统](#线性系统)
 
 <!-- /TOC -->
 ----
@@ -27,8 +30,11 @@ Python实现
   - _global.py
   - Vector.py
   - Matrix.py
+  - LinearSystem.py
 - main_vector.py
 - main_matrix.py
+- main_matrix_transformation.py
+- main_linearsystem.py
 
 ----
 ## 向量类实现
@@ -173,3 +179,11 @@ print(P.T())
 > ```Python
 > print(Matrix.identity(2))
 > ```
+## 线性系统
+- #### 高斯消元法
+```Python
+ls = LinearSystem(A, b)
+if not ls.gauss_jordan_elimination():
+    print("No Solution!")
+ls.fancy_print()
+```
