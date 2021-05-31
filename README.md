@@ -191,3 +191,7 @@ ls.fancy_print()
 ```Python
 invA = inv(A)
 ```
+- #### 矩阵LU分解
+```Python
+L, U = LU(A)
+```
