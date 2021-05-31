@@ -4,13 +4,15 @@ from ._global import is_zero
 
 
 class LinearSystem:
-    def __init__(self, A, b):
+    def __init__(self, A, b=None):
 
-        assert A.row_num() == len(b), \
+        assert b is None or A.row_num() == len(b), \
             "row number of A must be equal to the length of b."
         self._m = A.row_num()
         self._n = A.col_num()
 
+        if b is None:
+            self.Ab = [A.row_vector(i) for i in range(A.row_num())]
         if isinstance(b, Vector):
             self.Ab = [
                 Vector(A.row_vector(i).underlying_list() + [b[i]])
@@ -82,3 +84,12 @@ def inv(A):
         return None
     invA = [[row[i] for i in range(n, 2 * n)] for row in ls.Ab]
     return Matrix(invA)
+
+
+def rank(A):
+
+    ls = LinearSystem(A)
+    ls.gauss_jordan_elimination()
+
+    zero = Vector.zero(A.col_num())
+    return sum([row != zero for row in ls.Ab])

@@ -34,3 +34,6 @@ if __name__ == "__main__":
     print("{} · {} = {}".format(vec, vec2, vec.dot(vec2)))
 
     print("{} * {} = {}".format(vec, vec2, vec * vec2))
+
+    vec3 = Vector([0, 0])
+    print(vec2 != vec3)

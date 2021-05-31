@@ -1,7 +1,7 @@
 from LA.Matrix import Matrix
 from LA.Vector import Vector
 from LA.LinearSystem import LinearSystem
-from LA.LinearSystem import inv
+from LA.LinearSystem import inv, rank
 
 if __name__ == "__main__":
 
@@ -23,3 +23,4 @@ if __name__ == "__main__":
     print(A.dot(invA))
     print(invA.dot(A))
 
+    print(rank(A))

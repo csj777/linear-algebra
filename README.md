@@ -195,3 +195,7 @@ invA = inv(A)
 ```Python
 L, U = LU(A)
 ```
+- #### 矩阵秩
+```Python
+rank(A)
+```

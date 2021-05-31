@@ -1,5 +1,5 @@
 import math
-from ._global import EPSILON
+from ._global import EPSILON, is_equal
 
 
 class Vector:
@@ -63,6 +63,17 @@ class Vector:
         '''向量取负'''
         return -1 * self
 
+    def __eq__(self, other):
+        '''返回向量是否相等'''
+        other_list = other.underlying_list()
+        if (len(other_list) != len(self._values)):
+            return False
+        return all(is_equal(x, y) for x, y in zip(self._values, other_list))
+
+    def __neq__(self, other):
+        '''返回向量是否不等'''
+        return not (self == other)
+
     @classmethod
     def zero(cls, dim):
         '''返回dim维度零向量'''
@@ -85,7 +96,7 @@ class Vector:
 
     def dot(self, another):
         '''向量点乘'''
-        if(len(another) == 1):
+        if (len(another) == 1):
             return self * another[0]
         assert len(self) == len(another), \
             "Error in dot product. Length of vectors must be same."
